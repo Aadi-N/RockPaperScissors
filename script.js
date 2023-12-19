@@ -1,34 +1,67 @@
 // Rock Paper Scissors
 const display = document.getElementById("display");
-let playerScore = 0;
-let robotScore = 0;
+const playerScore = document.getElementById("playerScore");
+const robotPick = document.getElementById("robotPick");
+const robotScore = document.getElementById("robotScore");
+let playerWins = 0;
+let robotWins = 0;
+playerScore.value = 0;
+robotScore.value = 0;
 
+// Random Number generator from 0 -> max(non inclusive)
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+// Generates the result of the current choice of the player
+// and displays the result
 function result(playerChoice) {
     let robotChoice = getRandomInt(3);
     let result = playRound(playerChoice, robotChoice);
+    
+    // Display the robot pick
+    if(robotChoice == 0) {
+        robotPick.value = "Rock";
+    }
+    else if(robotChoice == 1) {
+        robotPick.value = "Paper";
+    }
+    else if(robotChoice == 2) {
+        robotPick.value = "Scissors";
+    }
 
+    // Check the current round winner and store then display score
     if(result == 0) {
         display.value = "Tie";
     }
     else if(result == 1) {
         display.value = "Player Wins";
-        playerScore += 1;
+        playerWins += 1;
+        playerScore.value = playerWins;
     }
     else if(result == -1) {
         display.value = "Robot Wins";
-        robotScore += 1;
+        robotWins += 1;
+        robotScore.value = robotWins;
     }
 
-    // Victory Condition Check
-    if(playerScore >= 3) {
+    checkVictory();
+}
+
+function checkVictory() {
+    if(playerWins >= 3) {
         alert("Player Wins!");
+        playerWins = 0;
+        robotWins = 0;
+        playerScore.value = 0;
+        robotScore.value = 0;
     }
-    else if(robotScore >= 3) {
+    else if(robotWins >= 3) {
         alert("Robot Wins :(");
+        playerWins = 0;
+        robotWins = 0;
+        playerScore.value = 0;
+        robotScore.value = 0;
     }
 }
 

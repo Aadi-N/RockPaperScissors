@@ -8,8 +8,40 @@ body {
     background: hsl(60, 56%, 91%);
 }
 
+/* Score Section */
+#score {
+    display:flex;
+    font-family: Arial, sans-serif;
+    background-color: #3C0010;
+    border-radius: 20px;
+    border: solid;
+    border-color: black;
+    max-width: 500px;
+    overflow: hidden;
+    height: 200px;
+    margin: 20px;
+}
 
+#playerScore {
+    width: 25%;
+    background-color: #D1A170;
+    text-align: center;
+    font-size: 3rem;
+}
 
+#robotPick {
+    width: 50%;
+    background-color: #d2b79d;
+    text-align: center;
+    font-size: 3rem;
+}
+
+#robotScore {
+    width: 25%;
+    background-color: #D1A170;
+    text-align: center;
+    font-size: 3rem;
+}
 
 /* Game Section */
 #game {

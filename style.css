@@ -91,3 +91,14 @@ button:hover {
 button:active {
     background-color: hsl(30, 51%, 80%);
 }
+
+#totalWins {
+    width: 200px;
+    height: 200px;
+    background-color: #d2b79d;
+    border: solid;
+    border-color: black;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 4rem;
+}

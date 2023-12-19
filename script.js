@@ -3,10 +3,14 @@ const display = document.getElementById("display");
 const playerScore = document.getElementById("playerScore");
 const robotPick = document.getElementById("robotPick");
 const robotScore = document.getElementById("robotScore");
+const totalWins = document.getElementById("totalWins");
 let playerWins = 0;
 let robotWins = 0;
-playerScore.value = 0;
-robotScore.value = 0;
+let totalPlayerWins = 0;
+playerScore.value = playerWins;
+robotScore.value = robotWins;
+totalWins.value = totalPlayerWins;
+
 
 // Random Number generator from 0 -> max(non inclusive)
 function getRandomInt(max) {
@@ -57,6 +61,8 @@ function checkVictory() {
         robotScore.value = 0;
         robotPick.value = "";
         display.value = "";
+        totalPlayerWins += 1;
+        totalWins.value = totalPlayerWins;
     }
     else if(robotWins >= 3) {
         alert("Robot Wins :(");

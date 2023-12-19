@@ -55,6 +55,8 @@ function checkVictory() {
         robotWins = 0;
         playerScore.value = 0;
         robotScore.value = 0;
+        robotPick.value = "";
+        display.value = "";
     }
     else if(robotWins >= 3) {
         alert("Robot Wins :(");
@@ -62,6 +64,8 @@ function checkVictory() {
         robotWins = 0;
         playerScore.value = 0;
         robotScore.value = 0;
+        robotPick.value = "";
+        display.value = "";
     }
 }
 
